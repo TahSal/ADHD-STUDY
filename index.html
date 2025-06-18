@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Through Our Eyes – Mapping the Neurodivergent Healthcare Journey</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for GitHub icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-p9N3kTbNwXj1XtXP18pPgPrq/rdI4KAlageFMdqzj0EL0p8hOorIWlzH3r9UUD5T1ym3cL94YQnBX1zM16M8gA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --teal-light:#00897B;
+      --teal-dark:#00695C;
+      --accent:#00897B;
+      --text:#2C2C2C;
+      --bg:#FFFFFF;
+      --radius:8px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:Inter,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+    }
+    h2{
+      font-family:"Playfair Display",serif;
+      font-weight:700;
+      margin-bottom:.5rem;
+    }
+    .container{
+      max-width:900px;
+      margin:0 auto;
+      padding:1.5rem;
+    }
+    /* ----- Hero ----- */
+    .hero{
+      padding:3rem 1.5rem;
+      text-align:center;
+      color:#fff;
+      background:linear-gradient(135deg,var(--teal-light),var(--teal-dark));
+    }
+    .avatar{
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      object-fit:cover;
+      border:4px solid #fff;
+      margin-bottom:1rem;
+    }
+    .tagline{
+      font-size:1.25rem;
+      font-weight:600;
+      margin-top:.25rem;
+    }
+    /* ----- Sections ----- */
+    section{
+      background:#fff;
+      margin:1.5rem 0;
+      padding:1.5rem;
+      border-radius:var(--radius);
+      box-shadow:0 2px 8px rgba(0,0,0,.08);
+    }
+    ul{margin-left:1.25rem;padding-left:.25rem}
+    ul li{margin:.25rem 0}
+    /* ----- Buttons ----- */
+    .btn{
+      display:inline-block;
+      margin:.5rem .25rem;
+      padding:.6rem 1.2rem;
+      background:var(--accent);
+      color:#fff;
+      text-decoration:none;
+      border-radius:var(--radius);
+      font-weight:600;
+    }
+    .btn:hover{background:var(--teal-dark)}
+    /* ----- Footer ----- */
+    footer{
+      text-align:center;
+      margin:2rem 0 1rem;
+      color:#666;
+      font-size:.9rem;
+    }
+    footer a{color:#666;text-decoration:none}
+    footer a:hover{color:var(--accent)}
+    /* ----- Responsive ----- */
+    @media (max-width:600px){
+      .container{padding:1rem}
+      .hero{padding:2rem 1rem}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Header -->
+  <header class="hero">
+    <img src="avatar.jpg" alt="Portrait of Tahani Abdullah" class="avatar">
+    <h1>Tahani Abdullah</h1>
+    <p class="tagline">Neurodiversity Researcher &amp; Advocate</p>
+  </header>
+
+  <main class="container">
+
+    <!-- About the Researcher -->
+    <section id="about-researcher">
+      <h2>About the Researcher</h2>
+      <p>
+        I am a public-health professional and volunteer research fellow at the Neurodiversity Foundation, driven by a passion for inclusive, sensory-friendly design. My work focuses on co-creating solutions with neurodivergent communities so healthcare services become more accessible, humane, and empowering.
+      </p>
+    </section>
+
+    <!-- About the Study -->
+    <section id="about-study">
+      <h2>About the Study</h2>
+      <p>
+        <em>Through Our Eyes</em> is a Photovoice Participatory Action Research project with 8–10 Dutch adults who have ADHD. Participants use phone cameras to capture barriers and bright spots across three healthcare moments—pre-visit, waiting room, and consultation. Together we analyze the images, design small “Journey Boosters” (e.g., visual check-in guides, quiet-kit stations), and draft a Neuro-Inclusive Care Pledge clinics can adopt instantly.
+      </p>
+    </section>
+
+    <!-- PAR Approach -->
+    <section id="par-approach">
+      <h2>PAR Approach</h2>
+      <ul>
+        <li>Co-researcher onboarding</li>
+        <li>Photovoice image capture (6 photos per participant)</li>
+        <li>Show-and-Tell workshop</li>
+        <li>Booster co-design &amp; pilot</li>
+        <li>Pop-up exhibit &amp; pledge signing</li>
+      </ul>
+    </section>
+
+    <!-- AI-Enabled Workflow -->
+    <section id="ai-workflow">
+      <h2>AI-Enabled Workflow</h2>
+      <ul>
+        <li>🌐 GitHub Pages microsite for recruitment &amp; gallery</li>
+        <li>🤖 Caption clustering with ChatGPT&nbsp;Vision</li>
+        <li>🔁 Zapier automation: Google Form → Airtable → email receipt</li>
+      </ul>
+    </section>
+
+    <!-- Study Materials -->
+    <section id="materials">
+      <h2>Study Materials</h2>
+      <a class="btn" href="proposal.pdf" aria-label="Download Research Proposal PDF">Download Research Proposal (PDF)</a>
+      <a class="btn" href="consent_plain.pdf" aria-label="Download Participant Consent Form PDF">Participant Consent Form (PDF)</a>
+      <a class="btn" href="flyer.pdf" aria-label="Download Recruitment Flyer PDF">Recruitment Flyer (PDF)</a>
+    </section>
+
+    <!-- Weekly Updates -->
+    <section id="weekly-updates">
+      <h2>Weekly Updates</h2>
+      <ul>
+        <!-- links will be added here -->
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Tahani Abdullah.&nbsp;
+    <a href="https://github.com/USERNAME/through-our-eyes-ai-portfolio" target="_blank" rel="noopener">
+      <i class="fa-brands fa-github" aria-hidden="true"></i>
+      <span class="sr-only">GitHub repository</span>
+    </a>
+  </footer>
+
+</body>
+</html>
