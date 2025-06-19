@@ -5,93 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Through ADHD Eyes – Mapping the Adult ADHD Healthcare Journey</title>
 
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome for GitHub icon -->
+  <!-- Font-Awesome (GitHub icon) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-p9N3kTbNwXj1XtXP18pPgPrq/rdI4KAlageFMdqzj0EL0p8hOorIWlzH3r9UUD5T1ym3cL94YQnBX1zM16M8gA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
+    /* —— Colour palette inspired by adhdevidence.org —— */
     :root{
-      --blue:#0A78FF;
-      --navy:#0D1B4C;
-      --green:#00C99C;
-      --bg-light:#F4F7FE;
+      --purple:#5835D0;
+      --navy:#1C2756;
+      --teal:#01A3D9;
+      --orange:#FF7B2D;
+      --bg:#F8FAFD;
+      --white:#FFFFFF;
       --radius:12px;
-      --shadow:0 2px 10px rgba(0,0,0,.08);
+      --shadow:0 4px 12px rgba(0,0,0,.08);
     }
+    /* —— Reset —— */
     *{box-sizing:border-box;margin:0;padding:0}
     body{
       font-family:Inter,sans-serif;
-      background:var(--bg-light);
-      color:#1C1C1C;
+      background:var(--bg);
+      color:var(--navy);
       line-height:1.6;
       -webkit-font-smoothing:antialiased;
     }
     h1,h2{
       font-family:Poppins,Inter,sans-serif;
       font-weight:700;
-      line-height:1.2;
+      line-height:1.25;
+      margin-bottom:.5rem;
     }
-    h1{font-size:2.25rem;margin-bottom:.5rem;color:#fff}
-    h2{font-size:1.75rem;margin-bottom:.6rem;color:var(--navy)}
+    h1{font-size:2rem;color:var(--white)}
+    h2{font-size:1.7rem;color:var(--navy)}
     p,li{font-size:1rem}
-    /* ---------- Hero ---------- */
+    a{text-decoration:none}
+
+    /* —— Hero —— */
     .hero{
-      padding:4rem 1.5rem;
+      background:linear-gradient(135deg,var(--navy) 0%,var(--purple) 100%);
+      padding:4rem 1.5rem 3rem;
       text-align:center;
-      background:linear-gradient(135deg,var(--navy),var(--blue));
-      color:#fff;
+      color:var(--white);
     }
-    .hero span{display:block;font-size:1.1rem;font-weight:600;margin-top:.4rem}
-    /* ---------- Layout ---------- */
+    .hero span{
+      display:block;
+      margin-top:.4rem;
+      font-size:1.1rem;
+      letter-spacing:.3px;
+      font-weight:600;
+    }
+
+    /* —— Layout —— */
     .container{
       max-width:960px;
       margin:0 auto;
       padding:2rem 1.25rem;
     }
     section{
-      background:#fff;
+      background:var(--white);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       padding:2rem 1.75rem;
       margin:1.5rem 0;
     }
-    ul{margin-left:1.25rem;padding-left:.25rem}
-    ul li{margin:.35rem 0}
-    /* ---------- Buttons ---------- */
+    ul{margin-left:1.35rem;padding-left:.25rem}
+    ul li{margin:.4rem 0}
+
+    /* —— Buttons —— */
     .btn{
       display:inline-block;
-      padding:.8rem 1.5rem;
-      margin:.4rem;
-      border:none;
-      border-radius:var(--radius);
-      text-decoration:none;
-      font-weight:600;
+      background:var(--orange);
       color:#fff;
-      background:var(--green);
+      padding:.9rem 1.7rem;
+      border-radius:var(--radius);
+      font-weight:600;
+      margin:.35rem;
       transition:background .25s ease;
     }
-    .btn:hover{background:#01b38a}
-    /* ---------- Download buttons row ---------- */
+    .btn:hover{background:#e66c26}
+
+    /* —— Downloads row —— */
     .downloads{
       display:flex;
       flex-wrap:wrap;
       gap:.75rem;
       justify-content:center;
     }
-    /* ---------- Footer ---------- */
+
+    /* —— Footer —— */
     footer{
       text-align:center;
-      padding:2rem 1rem;
-      background:var(--bg-light);
-      color:#555;
+      padding:2rem 1rem 1.2rem;
+      background:var(--bg);
+      color:#49507A;
       font-size:.9rem;
     }
-    footer a{color:#555;text-decoration:none}
-    footer a:hover{color:var(--blue)}
-    /* ---------- Responsive ---------- */
+    footer a{color:#49507A}
+    footer a:hover{color:var(--purple)}
+
+    /* —— Responsive —— */
     @media(max-width:600px){
-      h1{font-size:1.8rem}
+      h1{font-size:1.6rem}
       h2{font-size:1.45rem}
       .container{padding:1.25rem}
       .btn{width:100%;text-align:center}
@@ -104,65 +120,64 @@
   <header class="hero">
     <h1>Through ADHD Eyes</h1>
     <span>Mapping the Adult ADHD Healthcare Journey in the Netherlands</span>
-    <p style="margin-top:1rem;font-size:1.05rem;font-weight:600;">Photovoice Participatory Action Research</p>
+    <p style="margin-top:1rem;font-weight:600;">Photovoice Participatory Action Research</p>
   </header>
 
   <main class="container">
 
-    <!-- STUDY INTRODUCTION -->
+    <!-- INTRODUCTION -->
     <section id="intro">
       <h2>Study Introduction</h2>
       <p>
-        Adults with ADHD often face long waits, sensory-busy clinics, and confusing paperwork in Dutch healthcare.
-        <em>Through ADHD Eyes</em> invites 5–6 adults to photograph these moments, pinpoint both barriers and bright
-        spots, and design small “Journey Boosters” that clinics can adopt quickly. Run with the Neurodiversity
-        Foundation, this participatory action research project positions every participant as a co-researcher shaping
-        real change in just eight weeks.
+        Adults with ADHD often face long waits, sensory-busy clinics, and complex paperwork in Dutch healthcare.
+        <em>Through ADHD Eyes</em> invites 5–6 adults to photograph these moments, highlight barriers and bright spots,
+        and design quick “Journey Boosters” clinics can adopt. The Neurodiversity Foundation leads this eight-week
+        participatory action research: every participant is a co-researcher shaping real change.
       </p>
     </section>
 
-    <!-- STUDY AIM -->
+    <!-- AIM -->
     <section id="aim">
       <h2>Study Aim</h2>
       <ul>
-        <li>Document real-world barriers and facilitators across help-seeking, waiting, and consultation stages.</li>
+        <li>Document barriers and facilitators during help-seeking, waiting, and consultation.</li>
         <li>Co-create and pilot low-cost Journey Boosters for ADHD-friendly clinics.</li>
         <li>Produce a Neuro-Inclusive Care Pledge informed by lived experience.</li>
       </ul>
     </section>
 
-    <!-- STUDY METHODOLOGY -->
+    <!-- METHODOLOGY -->
     <section id="method">
       <h2>Method in 3 Steps</h2>
-      <ol style="margin-left:1.25rem;padding-left:.25rem">
-        <li><strong>Photovoice image capture&nbsp;</strong>— each participant takes six photos of helpful or stressful moments.</li>
-        <li><strong>Reflection &amp; group workshop&nbsp;</strong>— together we analyse themes and invent booster ideas.</li>
-        <li><strong>Booster testing &amp; pledge&nbsp;</strong>— participants trial fixes, then co-sign a Neuro-Inclusive Care Pledge.</li>
+      <ol style="margin-left:1.3rem;padding-left:.25rem">
+        <li><strong>Photovoice capture</strong> – six photos per participant showing good &amp; bad moments.</li>
+        <li><strong>Reflection workshop</strong> – group discussion to spot themes &amp; design boosters.</li>
+        <li><strong>Booster test &amp; pledge</strong> – try fixes, sign a Neuro-Inclusive Care Charter.</li>
       </ol>
     </section>
 
-    <!-- CALL TO ACTION -->
+    <!-- SIGN-UP -->
     <section id="signup" style="text-align:center">
       <h2>Ready to Take Part?</h2>
       <a class="btn" href="https://forms.gle/YOUR-FORM" target="_blank" rel="noopener">Sign Up to Take Part</a>
     </section>
 
-    <!-- DOWNLOAD SECTION -->
+    <!-- DOWNLOADS -->
     <section id="downloads">
       <h2>Study Materials</h2>
       <div class="downloads">
-        <a class="btn" href="consent_plain.pdf" target="_blank" aria-label="Download Participant Consent Form PDF">Participant Consent Form (PDF)</a>
-        <a class="btn" href="flyer.pdf" target="_blank" aria-label="Download Invitation Flyer PDF">Invitation Flyer (PDF)</a>
-        <a class="btn" href="proposal.pdf" target="_blank" aria-label="Download Full Proposal PDF">Full Proposal (PDF)</a>
+        <a class="btn" href="consent_plain.pdf" target="_blank" aria-label="Download Participant Consent Form">Participant Consent (PDF)</a>
+        <a class="btn" href="flyer.pdf" target="_blank" aria-label="Download Invitation Flyer">Invitation Flyer (PDF)</a>
+        <a class="btn" href="proposal.pdf" target="_blank" aria-label="Download Full Proposal">Full Proposal (PDF)</a>
       </div>
     </section>
 
   </main>
 
   <footer>
-    © 2025 Tahani Abdullah &nbsp;|&nbsp;
+    © 2025 Tahani Saleh &nbsp;|&nbsp;
     <a href="https://github.com/USERNAME/through-adhd-eyes" target="_blank" rel="noopener">
-      <i class="fa-brands fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span>
+      <i class="fa-brands fa-github" aria-hidden="true"></i>
     </a>
   </footer>
 
