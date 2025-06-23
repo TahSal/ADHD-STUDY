@@ -7,121 +7,164 @@
   <meta name="description" content="Human‑Centred Design protocol for an ADHD‑friendly healthcare journey in the Netherlands.">
   <style>
     /* ------------------------------
-       COLOUR PALETTE – lifted from adhdevidence.org
-       --------------------------------------------- */
-    :root{
-      --navy:#002B45;      /* primary brand navy */
-      --orange:#F9B233;    /* accent orange */
-      --white:#FFFFFF;     /* pure white */
-      --light:#E6EDF1;     /* soft light‑blue used for blocks */
-      --max:960px;
+       COLOUR PALETTE – matches adhdevidence.org
+    ------------------------------ */
+    :root {
+      --navy: #002B45;
+      --orange: #F9B233;
+      --offwhite: #F7F9FA;
+      --lightblue: #D4E6F1;
     }
-
-    /* Reset & base ------------------------------------------------------- */
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--white);color:var(--navy);line-height:1.6;-webkit-font-smoothing:antialiased;scroll-behavior:smooth;}
-
-    /* Header / navigation ----------------------------------------------- */
-    header{background:var(--navy);position:sticky;top:0;z-index:10;}
-    nav{max-width:var(--max);margin:0 auto;padding:0.75rem 1rem;display:flex;justify-content:space-between;align-items:center;color:var(--white);}  
-    nav a{color:var(--white);text-decoration:none;font-size:0.9rem;margin-left:1rem;}    
-    nav a:hover,nav a:focus{text-decoration:underline;color:var(--orange);}  
-
-    /* Hero --------------------------------------------------------------- */
-    .hero{background:var(--navy);color:var(--white);text-align:center;padding:4rem 1rem 3rem;}
-    .hero h1{font-size:2.25rem;font-weight:700;margin-bottom:0.75rem;}
-    .hero p{font-size:1.05rem;opacity:0.95;}
-
-    /* Sections ----------------------------------------------------------- */
-    section{max-width:var(--max);margin:3rem auto;padding:0 1rem;}
-    section h2{font-size:1.5rem;color:var(--navy);border-left:4px solid var(--orange);padding-left:0.5rem;margin-bottom:0.5rem;}
-    section ul,section ol{margin-left:1.25rem;margin-top:0.5rem;}
-    /* alternate background colour blocks */
-    section:nth-of-type(odd){background:var(--light);padding:2.5rem 1rem;}
-    /* subtle divider between blocks on small screens */
-    section + section{border-top:1px solid var(--light);} 
-
-    /* Buttons ------------------------------------------------------------ */
-    .btn{display:inline-block;background:var(--orange);color:var(--navy);padding:0.6rem 1.2rem;border-radius:4px;font-weight:600;text-decoration:none;transition:all 0.2s ease-in-out;}
-    .btn:hover,.btn:focus{background:var(--navy);color:var(--white);}
-
-    /* Footer ------------------------------------------------------------- */
-    footer{background:var(--light);padding:1rem;text-align:center;font-size:0.8rem;color:var(--navy);}    
-
-    @media(min-width:640px){
-      .hero h1{font-size:2.75rem;}
+    /* Utility */
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--navy);
+      background: var(--offwhite);
+    }
+    h1, h2, h3 { margin: 0 0 0.4em 0; font-weight: 700; }
+    h1 { font-size: 2.25rem; }
+    h2 { font-size: 1.6rem; }
+    p { margin: 0 0 1em 0; max-width: 65ch; }
+    a { color: var(--orange); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    /* Layout */
+    header {
+      background: var(--navy);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      padding: 1rem 1.25rem;
+      margin: 0 auto;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 1rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+    }
+    nav a:hover { color: var(--orange); }
+    .btn-primary {
+      display: inline-block;
+      padding: 0.6rem 1.1rem;
+      background: var(--orange);
+      color: var(--navy);
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.2s ease-in-out;
+    }
+    .btn-primary:hover { background: #ffcb61; }
+    section {
+      padding: 4.5rem 1.25rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-alt { background: var(--lightblue); }
+    /* Sign‑up form */
+    .iframe-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 70%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    }
+    .iframe-wrap iframe {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    footer {
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.85rem;
     }
   </style>
 </head>
 <body>
+  <!-- =============================
+       NAVBAR
+  ============================== -->
+  <header>
+    <nav>
+      <strong style="font-size:1.1rem;">Through ADHD Eyes</strong>
+      <div>
+        <a href="#about">About</a>
+        <a href="#aim">Study Aim</a>
+        <a href="#method">Method</a>
+        <a href="#signup">Sign‑Up</a>
+        <a href="#flyer">Flyer</a>
+      </div>
+    </nav>
+  </header>
 
-<header>
-  <nav>
-    <strong>Through ADHD Eyes</strong>
-    <div>
-      <a href="#about">Project</a>
-      <a href="#aim">Aim</a>
-      <a href="#method">Method</a>
-      <a href="#signup">Sign&nbsp;Up</a>
-      <a href="#flyer">Flyer</a>
+  <!-- =============================
+       HERO / INTRO
+  ============================== -->
+  <section id="about">
+    <h1>Human‑Centred Design for an ADHD‑Friendly Healthcare Journey</h1>
+    <p>This research project explores how adults with Attention‑Deficit/Hyperactivity Disorder experience healthcare in the Netherlands and co‑creates design principles for clinics that truly work for ADHD minds.</p>
+    <!-- Inserted requested image -->
+    <figure style="margin:3rem auto;max-width:480px;width:90%;">
+      <img src="https://github.com/TahSal/ADHD-STUDY/blob/main/image.png?raw=true" alt="Through ADHD Eyes visual" style="width:100%;height:auto;border-radius:12px;box-shadow:0 6px 14px rgba(0,0,0,0.15);">
+    </figure>
+  </section>
+
+  <!-- =============================
+       STUDY AIM
+  ============================== -->
+  <section id="aim" class="section-alt">
+    <h2>Study Aim</h2>
+    <p>The project aims to map the end‑to‑end healthcare journey—from appointment booking to follow‑up—and identify friction points unique to adults with ADHD. Insights will inform a set of evidence‑based, immediately actionable guidelines for practitioners.</p>
+  </section>
+
+  <!-- =============================
+       STUDY METHOD
+  ============================== -->
+  <section id="method">
+    <h2>Methodology Overview</h2>
+    <p>Using a Human‑Centred Design (HCD) framework, we will conduct ethnographic ride‑alongs, participatory journey mapping, and rapid prototyping workshops with patients, clinicians, and administrators.</p>
+    <ul>
+      <li>🗺️ <strong>Phase 1:</strong> Contextual interviews & diary studies</li>
+      <li>🎨 <strong>Phase 2:</strong> Co‑design sessions to generate solution concepts</li>
+      <li>🔬 <strong>Phase 3:</strong> Prototype testing in real clinics</li>
+    </ul>
+  </section>
+
+  <!-- =============================
+       SIGN‑UP
+  ============================== -->
+  <section id="signup" class="section-alt">
+    <h2>Participate in the Study</h2>
+    <p>If you are an adult (18+) diagnosed with ADHD and have visited a GP or specialist in the Netherlands within the last 12 months, we’d love to hear from you.</p>
+    <div class="iframe-wrap">
+      <!-- Replace the src with your live Google Form link -->
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd-placeholder/viewform?embedded=true" title="Sign‑Up Form" loading="lazy"></iframe>
     </div>
-  </nav>
-</header>
+  </section>
 
-<section class="hero" id="top">
-  <h1>Human‑Centred Design for an ADHD‑Friendly Healthcare Journey</h1>
-  <p>Co‑designing practical solutions with adults with ADHD and Dutch healthcare staff.</p>
-</section>
+  <!-- =============================
+       INVITATION FLYER
+  ============================== -->
+  <section id="flyer">
+    <h2>Invitation Flyer</h2>
+    <p>Share our flyer with friends, ADHD communities, or clinics to help us recruit diverse voices.</p>
+    <a href="invitation-flyer.pdf" class="btn-primary" download>Download PDF Flyer</a>
+  </section>
 
-<section id="about">
-  <h2>About the Project</h2>
-  <p>Healthcare encounters in the Netherlands are traditionally optimised for neurotypical cognitive styles—tight schedules, information‑dense consultations and sensory‑neutral spaces. Adults with Attention‑Deficit/Hyperactivity Disorder (ADHD) often hit friction at every touch‑point: booking and remembering appointments, sensory overload in waiting rooms and consultation formats that overwhelm executive functioning.</p>
-  <p><strong>Through ADHD Eyes</strong> applies a four‑phase human‑centred design (HCD) approach to surface these pain‑points alongside those who experience them and to co‑create low‑cost, real‑world adjustments that make everyday healthcare more neuro‑affirming.</p>
-</section>
-
-<section id="aim">
-  <h2>Study Aim</h2>
-  <p>The 16‑week study brings together adults with ADHD and frontline healthcare professionals to:</p>
-  <ul>
-    <li>Map friction points across three journey moments—<em>Access &amp; Booking</em>, <em>Waiting‑Room Experience</em> and <em>Consultation &amp; Follow‑up</em>.</li>
-    <li>Formulate “How‑Might‑We” opportunity statements and sketch solution concepts.</li>
-    <li>Prototype and test at least three service modifications such as sensory zoning kits and ADHD‑friendly appointment reminders.</li>
-  </ul>
-  <p>Our end‑goal is an open‑access <em>ADHD‑Friendly Clinic Starter Pack</em> ready for roll‑out across Dutch primary care.</p>
-</section>
-
-<section id="method">
-  <h2>Study Method</h2>
-  <p>The protocol follows IDEO’s Human‑Centred Design rhythm:</p>
-  <ol>
-    <li><strong>Inspiration&nbsp;(Weeks 1–4)</strong> – Contextual enquiry of booking flows and waiting areas, plus rapid post‑consultation interviews to surface lived‑experience insights.</li>
-    <li><strong>Ideation&nbsp;(Weeks 5–6)</strong> – Stakeholder workshops using brain‑writing and sketching to generate and prioritise ideas.</li>
-    <li><strong>Prototyping&nbsp;(Weeks 7–11)</strong> – Co‑creating paper or digital models of the top concepts and trialling them in a partner clinic over two iterative cycles.</li>
-    <li><strong>Implementation &amp; Spread&nbsp;(Weeks 12–16)</strong> – Refining successful prototypes, packaging them into the Starter Pack and sharing via a travelling exhibition.</li>
-  </ol>
-  <p>The project centres on service‑improvement artefacts rather than clinical interventions, so it falls outside the Dutch Medical Research Involving Human Subjects Act.</p>
-</section>
-
-<!-- Sign‑Up Section -->
-<section id="signup">
-  <h2>Sign Up to Participate</h2>
-  <p>If you have ADHD and live in the Netherlands—or if you are a healthcare professional interested in neurodiversity‑friendly practice—we’d love to hear from you. The study runs Spring–Summer 2025 and involves three short online workshops and optional prototype testing at your clinic.
-  </p>
-  <p><a class="btn" href="https://forms.gle/your-google-form-link" target="_blank" rel="noopener noreferrer">Open Sign‑Up Form</a></p>
-  <p style="font-size:0.85rem;opacity:0.8;max-width:600px;">We’ll only use the information you provide to contact you about this research and will never publish or share your personal details. No email addresses are displayed on this site to protect against spam.</p>
-</section>
-
-<!-- Invitation Flyer Section -->
-<section id="flyer">
-  <h2>Download the Invitation Flyer</h2>
-  <p>Share our one‑page flyer with colleagues or community spaces—it explains the project in plain Dutch and English and lists ways to get involved.</p>
-  <p><a class="btn" href="assets/invitation‑flyer.pdf" download>Download PDF (A4)</a></p>
-  <p style="font-size:0.85rem;opacity:0.8;max-width:600px;">Tip: print two‑sided and cut the tear‑off tabs at the bottom so people can take the details with them.</p>
-</section>
-
-<footer>
-  <p>&copy; 2025 Through ADHD Eyes &nbsp;&middot;&nbsp; Neurodiversity Foundation</p>
-</footer>
-
+  <footer>
+    © 2025 Through ADHD Eyes – All research conducted under Tilburg University ethical approval. No personal data is stored on this site.
+  </footer>
 </body>
 </html>
