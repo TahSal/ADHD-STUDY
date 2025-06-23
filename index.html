@@ -6,31 +6,44 @@
   <title>Through ADHD Eyes | Research Portfolio</title>
   <meta name="description" content="Human‑Centred Design protocol for an ADHD‑friendly healthcare journey in the Netherlands.">
   <style>
+    /* ------------------------------
+       COLOUR PALETTE – lifted from adhdevidence.org
+       --------------------------------------------- */
     :root{
-      --primary:#002b45;     /* deep navy */
-      --accent:#f9b233;      /* warm orange */
-      --text:#222;
-      --bg:#ffffff;
-      --light:#f5f7fa;
+      --navy:#002B45;      /* primary brand navy */
+      --orange:#F9B233;    /* accent orange */
+      --white:#FFFFFF;     /* pure white */
+      --light:#E6EDF1;     /* soft light‑blue used for blocks */
       --max:960px;
     }
+
+    /* Reset & base ------------------------------------------------------- */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;scroll-behavior:smooth;}
-    header{background:var(--primary);position:sticky;top:0;z-index:10;}
-    nav{max-width:var(--max);margin:0 auto;padding:0.75rem 1rem;display:flex;justify-content:space-between;align-items:center;color:#fff;}
-    nav a{color:#fff;text-decoration:none;font-size:0.9rem;margin-left:1rem;}
-    nav a:hover,nav a:focus{text-decoration:underline;color:var(--accent);}  
-    /* Hero */
-    .hero{background:var(--primary);color:#fff;text-align:center;padding:4rem 1rem 3rem;}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--white);color:var(--navy);line-height:1.6;-webkit-font-smoothing:antialiased;scroll-behavior:smooth;}
+
+    /* Header / navigation ----------------------------------------------- */
+    header{background:var(--navy);position:sticky;top:0;z-index:10;}
+    nav{max-width:var(--max);margin:0 auto;padding:0.75rem 1rem;display:flex;justify-content:space-between;align-items:center;color:var(--white);}
+    nav a{color:var(--white);text-decoration:none;font-size:0.9rem;margin-left:1rem;}
+    nav a:hover,nav a:focus{text-decoration:underline;color:var(--orange);}  
+
+    /* Hero --------------------------------------------------------------- */
+    .hero{background:var(--navy);color:var(--white);text-align:center;padding:4rem 1rem 3rem;}
     .hero h1{font-size:2.25rem;font-weight:700;margin-bottom:0.75rem;}
-    .hero p{font-size:1.05rem;opacity:0.9;}
-    /* Sections */
+    .hero p{font-size:1.05rem;opacity:0.95;}
+
+    /* Sections ----------------------------------------------------------- */
     section{max-width:var(--max);margin:3rem auto;padding:0 1rem;}
-    section h2{font-size:1.5rem;color:var(--primary);border-left:4px solid var(--accent);padding-left:0.5rem;margin-bottom:0.5rem;}
+    section h2{font-size:1.5rem;color:var(--navy);border-left:4px solid var(--orange);padding-left:0.5rem;margin-bottom:0.5rem;}
     section ul,section ol{margin-left:1.25rem;margin-top:0.5rem;}
-    section + section{border-top:1px solid var(--light);} /* subtle divider */
-    /* Footer */
-    footer{background:var(--light);padding:1rem;text-align:center;font-size:0.8rem;}
+    /* alternate background colour blocks */
+    section:nth-of-type(odd){background:var(--light);padding:2.5rem 1rem;}
+    /* subtle divider between blocks on small screens */
+    section + section{border-top:1px solid var(--light);} 
+
+    /* Footer ------------------------------------------------------------- */
+    footer{background:var(--light);padding:1rem;text-align:center;font-size:0.8rem;color:var(--navy);}
+
     @media(min-width:640px){
       .hero h1{font-size:2.75rem;}
     }
@@ -75,10 +88,10 @@
   <h2>Study Method</h2>
   <p>The protocol follows IDEO’s Human‑Centred Design rhythm:</p>
   <ol>
-    <li><strong>Inspiration&nbsp;(Weeks 1–4)</strong> &ndash; Contextual enquiry of booking flows and waiting areas, plus rapid post‑consultation interviews to surface lived‑experience insights.</li>
-    <li><strong>Ideation&nbsp;(Weeks 5–6)</strong> &ndash; Stakeholder workshops using brain‑writing and sketching to generate and prioritise ideas.</li>
-    <li><strong>Prototyping&nbsp;(Weeks 7–11)</strong> &ndash; Co‑creating paper or digital models of the top concepts and trialling them in a partner clinic over two iterative cycles.</li>
-    <li><strong>Implementation &amp; Spread&nbsp;(Weeks 12–16)</strong> &ndash; Refining successful prototypes, packaging them into the Starter Pack and sharing via a travelling exhibition.</li>
+    <li><strong>Inspiration&nbsp;(Weeks 1–4)</strong> – Contextual enquiry of booking flows and waiting areas, plus rapid post‑consultation interviews to surface lived‑experience insights.</li>
+    <li><strong>Ideation&nbsp;(Weeks 5–6)</strong> – Stakeholder workshops using brain‑writing and sketching to generate and prioritise ideas.</li>
+    <li><strong>Prototyping&nbsp;(Weeks 7–11)</strong> – Co‑creating paper or digital models of the top concepts and trialling them in a partner clinic over two iterative cycles.</li>
+    <li><strong>Implementation &amp; Spread&nbsp;(Weeks 12–16)</strong> – Refining successful prototypes, packaging them into the Starter Pack and sharing via a travelling exhibition.</li>
   </ol>
   <p>The project centres on service‑improvement artefacts rather than clinical interventions, so it falls outside the Dutch Medical Research Involving Human Subjects Act.</p>
 </section>
