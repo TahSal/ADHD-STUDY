@@ -4,7 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Through ADHD Eyes - Research Study</title>
+    <meta name="description" content="Innovative research study exploring ADHD adults' healthcare experiences in The Netherlands using Photovoice and Human-Centered Design methodologies.">
+    <meta name="keywords" content="ADHD, healthcare, research, photovoice, human-centered design, Netherlands">
+    <meta name="author" content="Through ADHD Eyes Research Team">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Through ADHD Eyes - Research Study">
+    <meta property="og:description" content="Join our innovative research study to improve ADHD healthcare experiences through photography and design.">
+    <meta property="og:type" content="website">
+    
     <style>
+        :root {
+            --primary-purple: #9c27b0;
+            --primary-blue: #667eea;
+            --accent-orange: #ff6b6b;
+            --accent-yellow: #ff9800;
+            --accent-green: #4caf50;
+            --accent-teal: #009688;
+            --text-dark: #2c3e50;
+            --text-light: #666;
+            --background-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 100%);
+            --gradient-accent: linear-gradient(45deg, var(--accent-orange), #ee5a24);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,9 +38,9 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-dark);
             background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
             min-height: 100vh;
         }
@@ -28,13 +54,14 @@
         /* Header */
         header {
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 20px var(--shadow-light);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         nav {
@@ -44,36 +71,56 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2c3e50;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #2c3e50;
+            color: var(--text-dark);
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .nav-links a:hover {
-            color: #e91e63;
+            color: var(--primary-purple);
         }
 
-        /* Hero Section */
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--primary-purple);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section with Background Image */
         .hero {
-            padding: 120px 0 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             position: relative;
             overflow: hidden;
+            background: var(--gradient-primary);
         }
 
         .hero::before {
@@ -83,67 +130,122 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1 )"/><circle cx="80" cy="40" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
-            animation: float 20s infinite linear;
+            background-image: url('https://github.com/TahSal/ADHD-STUDY/blob/main/11450de0-9dd0-4474-ba19-6b0e377809c4.jpg?raw=true' );
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.3;
+            z-index: 1;
         }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-primary);
+            opacity: 0.8;
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            padding: 2rem;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: -1px;
         }
 
         .hero .subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-weight: 300;
+            line-height: 1.5;
         }
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            background: var(--gradient-accent);
             color: white;
-            padding: 15px 30px;
+            padding: 18px 35px;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(238, 90, 36, 0.4);
+            box-shadow: 0 8px 25px rgba(238, 90, 36, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(238, 90, 36, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(238, 90, 36, 0.6);
         }
 
         /* Main Content */
         .main-content {
-            padding: 80px 0;
+            padding: 100px 0;
+        }
+
+        .section {
+            margin-bottom: 8rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: var(--text-dark);
+            margin-bottom: 4rem;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
         }
 
         .section-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .two-column-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 4rem;
             margin-bottom: 4rem;
         }
 
         .card {
-            background: white;
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            background: var(--white);
+            border-radius: 25px;
+            padding: 3rem;
+            box-shadow: 0 15px 40px var(--shadow-light);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .card::before {
@@ -152,167 +254,309 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 5px;
+            height: 6px;
             background: linear-gradient(90deg, var(--card-color), var(--card-color-light));
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px var(--shadow-medium);
         }
 
         .card.purple {
-            --card-color: #9c27b0;
+            --card-color: var(--primary-purple);
             --card-color-light: #e1bee7;
         }
 
         .card.yellow {
-            --card-color: #ff9800;
+            --card-color: var(--accent-yellow);
             --card-color-light: #ffe0b2;
         }
 
         .card.green {
-            --card-color: #4caf50;
+            --card-color: var(--accent-green);
             --card-color-light: #c8e6c9;
         }
 
         .card.teal {
-            --card-color: #009688;
+            --card-color: var(--accent-teal);
             --card-color-light: #b2dfdb;
+        }
+
+        .card.blue {
+            --card-color: #2196f3;
+            --card-color-light: #bbdefb;
+        }
+
+        .card.orange {
+            --card-color: #ff5722;
+            --card-color-light: #ffccbc;
         }
 
         .card h2 {
             color: var(--card-color);
-            font-size: 1.8rem;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .card h3 {
+            color: var(--card-color);
+            font-size: 1.5rem;
             margin-bottom: 1rem;
             font-weight: 600;
         }
 
         .card p {
-            color: #555;
-            line-height: 1.7;
-            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
         }
 
         .card ul {
-            color: #555;
+            color: var(--text-light);
             padding-left: 1.5rem;
         }
 
         .card li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        /* Methodology Section */
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .phase-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            border-left: 6px solid var(--phase-color);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .phase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--shadow-medium);
+        }
+
+        .phase-card.phase-1 { --phase-color: #e91e63; }
+        .phase-card.phase-2 { --phase-color: var(--accent-yellow); }
+        .phase-card.phase-3 { --phase-color: var(--accent-green); }
+        .phase-card.phase-4 { --phase-color: #2196f3; }
+        .phase-card.phase-5 { --phase-color: var(--primary-purple); }
+
+        .phase-number {
+            background: var(--phase-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         /* Sign-up Section */
         .signup-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gradient-primary);
             color: white;
-            padding: 4rem 0;
+            padding: 6rem 0;
             text-align: center;
-            margin: 4rem 0;
-            border-radius: 20px;
+            margin: 6rem 0;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .signup-form {
-            max-width: 500px;
-            margin: 2rem auto 0;
+        .signup-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1 )"/><circle cx="80" cy="40" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 30s infinite linear;
+        }
+
+        .form-container {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-container iframe {
+            width: 100%;
+            min-height: 600px;
+            border: none;
+            border-radius: 15px;
+        }
+
+        /* Data Protection Section */
+        .data-protection {
+            background: var(--white);
+            padding: 4rem 0;
+            margin: 4rem 0;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px var(--shadow-light);
+        }
+
+        .privacy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .privacy-item {
             display: flex;
-            flex-direction: column;
+            align-items: flex-start;
             gap: 1rem;
         }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-        }
-
-        .form-group label {
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 12px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .submit-btn {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+        .privacy-icon {
+            background: var(--gradient-primary);
             color: white;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(238, 90, 36, 0.4);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
         }
 
         /* Flyer Section */
         .flyer-section {
-            background: white;
-            padding: 4rem 0;
+            background: var(--white);
+            padding: 5rem 0;
             text-align: center;
-            border-radius: 20px;
-            margin: 2rem 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 25px;
+            margin: 4rem 0;
+            box-shadow: 0 15px 40px var(--shadow-light);
         }
 
         .flyer-preview {
-            max-width: 400px;
-            margin: 2rem auto;
-            padding: 2rem;
+            max-width: 450px;
+            margin: 3rem auto;
+            padding: 2.5rem;
             background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
-            border-radius: 15px;
-            border: 3px dashed #9c27b0;
+            border-radius: 20px;
+            border: 3px dashed var(--primary-purple);
+            transition: all 0.3s ease;
+        }
+
+        .flyer-preview:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px var(--shadow-medium);
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 12px 25px;
+            background: var(--primary-purple);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #7b1fa2;
+            transform: translateY(-2px);
         }
 
         /* Footer */
         footer {
-            background: #2c3e50;
+            background: var(--text-dark);
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-purple);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 2rem;
+            margin-top: 2rem;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
             }
 
             .nav-links {
                 display: none;
             }
 
-            .section-grid {
+            .section-grid,
+            .two-column-grid {
                 grid-template-columns: 1fr;
             }
 
-            .signup-form {
-                padding: 0 1rem;
+            .methodology-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            .form-container iframe {
+                min-height: 700px;
+            }
+
+            .card {
+                padding: 2rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
             }
         }
 
         /* Animations */
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(40px);
             animation: fadeInUp 0.8s ease forwards;
         }
 
@@ -323,143 +567,260 @@
             }
         }
 
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0px) rotate(360deg); }
+        }
+
         .card:nth-child(1) { animation-delay: 0.1s; }
         .card:nth-child(2) { animation-delay: 0.2s; }
         .card:nth-child(3) { animation-delay: 0.3s; }
         .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
+        .card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles for accessibility */
+        a:focus,
+        button:focus {
+            outline: 2px solid var(--primary-purple);
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body>
     <header>
         <nav class="container">
-            <div class="logo">Through ADHD Eyes</div>
+            <a href="#" class="logo">Through ADHD Eyes</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#aims">Study Aims</a></li>
-                <li><a href="#method">Method</a></li>
-                <li><a href="#signup">Participate</a></li>
-                <li><a href="#flyer">Flyer</a></li>
+                <li><a href="#methodology">Methodology</a></li>
+                <li><a href="#participation">Participation</a></li>
+                <li><a href="#signup">Register Interest</a></li>
+                <li><a href="#privacy">Privacy</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="container">
+        <div class="hero-content">
             <h1>Through ADHD Eyes</h1>
-            <p class="subtitle">Exploring and Improving ADHD Adults' Healthcare Experiences in The Netherlands Using Photovoice and Human-Centered Design</p>
-            <a href="#signup" class="cta-button">Join Our Study</a>
+            <p class="subtitle">Transforming ADHD Healthcare Through Photography and Human-Centered Design</p>
+            <a href="#signup" class="cta-button">Register Interest</a>
         </div>
     </section>
 
     <main class="main-content">
         <div class="container">
-            <div class="section-grid">
-                <div class="card purple fade-in" id="about">
-                    <h2>About the Project</h2>
-                    <p>This innovative research study integrates <strong>Photovoice methodology</strong> with <strong>Human-Centered Design</strong> to explore and improve the experiences of adults with ADHD in healthcare settings.</p>
-                    <p>By empowering participants to document their experiences through photographs and stories, we aim to foster a deeper understanding of the challenges they face and develop more effective solutions.</p>
-                    <p>Adults with ADHD face unique challenges when navigating the healthcare system. These challenges are often invisible or misunderstood by healthcare providers, leading to negative experiences and inadequate addressing of these individuals' needs.</p>
-                </div>
+            <!-- About Section -->
+            <section class="section" id="about">
+                <h2 class="section-title">Research Overview</h2>
+                <div class="two-column-grid">
+                    <div class="card purple fade-in">
+                        <h2>Our Mission</h2>
+                        <p>We are pioneering an innovative approach to understanding and improving ADHD healthcare experiences in The Netherlands. By combining the power of visual storytelling through Photovoice with Human-Centered Design principles, we aim to amplify the voices of adults with ADHD and create meaningful change in healthcare delivery.</p>
+                        <p>This research addresses the critical gap between healthcare providers' understanding and the lived experiences of adults with ADHD, fostering empathy and driving systemic improvements.</p>
+                    </div>
 
-                <div class="card yellow fade-in" id="aims">
-                    <h2>Study Aims</h2>
-                    <p>This research aims to:</p>
-                    <ul>
-                        <li>Understand the experiences of individuals with ADHD in healthcare settings through their own lens</li>
-                        <li>Identify challenges and barriers they face when accessing healthcare</li>
-                        <li>Explore the strengths and resources they use to navigate the healthcare system</li>
-                        <li>Develop innovative, human-centered solutions to improve healthcare experiences</li>
-                        <li>Empower participants to be active agents of change in improving healthcare services</li>
-                    </ul>
-                </div>
-
-                <div class="card green fade-in" id="method">
-                    <h2>Study Method</h2>
-                    <p>Our integrated methodology consists of <strong>five key phases</strong> over 2 months:</p>
-                    <ul>
-                        <li><strong>Phase 1:</strong> Empathy and Preparation (2 weeks)</li>
-                        <li><strong>Phase 2:</strong> Exploration and Documentation (3-4 weeks) - Photo capture and reflection</li>
-                        <li><strong>Phase 3:</strong> Analysis and Definition (2 weeks) - Collaborative analysis</li>
-                        <li><strong>Phase 4:</strong> Co-Design and Prototyping (2 weeks) - Solution development</li>
-                        <li><strong>Phase 5:</strong> Engagement and Impact (2 weeks) - Photovoice exhibition and stakeholder dialogue</li>
-                    </ul>
-                    <p>Participants will capture 15-20 photos documenting their healthcare experiences and participate in group discussions to develop solutions.</p>
-                </div>
-
-                <div class="card teal fade-in">
-                    <h2>Why Participate?</h2>
-                    <p>By joining this study, you will:</p>
-                    <ul>
-                        <li>Have your voice heard and experiences validated</li>
-                        <li>Contribute to improving healthcare for people with ADHD</li>
-                        <li>Learn new skills in photography and design thinking</li>
-                        <li>Connect with others who share similar experiences</li>
-                        <li>Help create practical solutions for real healthcare challenges</li>
-                        <li>Participate in a Photovoice exhibition to share your story</li>
-                    </ul>
-                    <p><strong>Eligibility:</strong> Adults (18+) with ADHD diagnosis living in The Netherlands</p>
-                </div>
-            </div>
-
-            <section class="signup-section" id="signup">
-                <div class="container">
-                    <h2>Sign Up for Participation</h2>
-                    <p>We are looking for 6-10 adults with ADHD to participate in this groundbreaking research study.</p>
-                    <p>Your participation will help improve healthcare experiences for the ADHD community.</p>
-                    
-                    <form class="signup-form" id="participationForm">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="age">Age *</label>
-                            <input type="number" id="age" name="age" min="18" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="location">Location in The Netherlands *</label>
-                            <input type="text" id="location" name="location" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="experience">Briefly describe your experience with healthcare as someone with ADHD *</label>
-                            <textarea id="experience" name="experience" required placeholder="Share your thoughts about accessing healthcare services, challenges you've faced, or positive experiences..."></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="motivation">Why are you interested in participating in this study? *</label>
-                            <textarea id="motivation" name="motivation" required placeholder="What motivates you to share your story and help improve healthcare for others with ADHD?"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">Submit Application</button>
-                    </form>
+                    <div class="card yellow fade-in">
+                        <h2>Research Objectives</h2>
+                        <ul>
+                            <li>Capture authentic healthcare experiences through participant-led photography</li>
+                            <li>Identify systemic barriers and opportunities for improvement</li>
+                            <li>Co-create evidence-based solutions with stakeholders</li>
+                            <li>Empower participants as advocates for healthcare transformation</li>
+                            <li>Develop actionable recommendations for healthcare providers</li>
+                            <li>Create lasting impact through community engagement and policy influence</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
-            <section class="flyer-section" id="flyer">
+            <!-- Methodology Section -->
+            <section class="section" id="methodology">
+                <h2 class="section-title">Research Methodology</h2>
+                <div class="card green fade-in" style="margin-bottom: 4rem;">
+                    <h2>Integrated Approach</h2>
+                    <p>Our methodology seamlessly integrates Photovoice—a participatory action research method—with Human-Centered Design thinking. This innovative combination empowers participants to document their healthcare journeys through photography while collaboratively designing solutions that address real-world challenges.</p>
+                    <p>The research unfolds through five interconnected phases, each building upon the previous to create a comprehensive understanding and actionable outcomes.</p>
+                </div>
+
+                <div class="methodology-grid">
+                    <div class="phase-card phase-1 fade-in">
+                        <div class="phase-number">1</div>
+                        <h3>Foundation & Empathy</h3>
+                        <p>Establishing research partnerships, participant onboarding, and creating a supportive community environment for authentic storytelling.</p>
+                    </div>
+
+                    <div class="phase-card phase-2 fade-in">
+                        <div class="phase-number">2</div>
+                        <h3>Documentation & Reflection</h3>
+                        <p>Participants capture their healthcare experiences through photography, accompanied by reflective narratives using structured frameworks.</p>
+                    </div>
+
+                    <div class="phase-card phase-3 fade-in">
+                        <div class="phase-number">3</div>
+                        <h3>Analysis & Synthesis</h3>
+                        <p>Collaborative examination of photographs and stories to identify patterns, themes, and key insights that inform solution development.</p>
+                    </div>
+
+                    <div class="phase-card phase-4 fade-in">
+                        <div class="phase-number">4</div>
+                        <h3>Co-Design & Innovation</h3>
+                        <p>Participatory design workshops where insights are transformed into practical solutions and prototypes for healthcare improvement.</p>
+                    </div>
+
+                    <div class="phase-card phase-5 fade-in">
+                        <div class="phase-number">5</div>
+                        <h3>Impact & Dissemination</h3>
+                        <p>Public exhibition of findings, stakeholder engagement, and development of implementation strategies for sustainable change.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Participation Section -->
+            <section class="section" id="participation">
+                <h2 class="section-title">Participation Information</h2>
+                <div class="section-grid">
+                    <div class="card teal fade-in">
+                        <h2>Why Participate?</h2>
+                        <ul>
+                            <li>Share your story and have your voice heard by healthcare decision-makers</li>
+                            <li>Contribute to meaningful improvements in ADHD healthcare services</li>
+                            <li>Develop new skills in photography, storytelling, and design thinking</li>
+                            <li>Connect with a supportive community of individuals with shared experiences</li>
+                            <li>Participate in creating evidence-based solutions for real healthcare challenges</li>
+                            <li>Showcase your experiences through a public Photovoice exhibition</li>
+                        </ul>
+                    </div>
+
+                    <div class="card blue fade-in">
+                        <h2>Eligibility Requirements</h2>
+                        <ul>
+                            <li>Adults aged 18 years or older</li>
+                            <li>Diagnosed with ADHD by a qualified healthcare professional</li>
+                            <li>Currently residing in The Netherlands</li>
+                            <li>Comfortable using a camera or smartphone for photography</li>
+                            <li>Willing to participate in group discussions and workshops</li>
+                            <li>Available for the full research period</li>
+                        </ul>
+                        <p style="margin-top: 1.5rem;"><strong>Language:</strong> Sessions will be conducted in English with Dutch translation support available when needed.</p>
+                    </div>
+
+                    <div class="card orange fade-in">
+                        <h2>What's Involved</h2>
+                        <ul>
+                            <li><strong>Orientation Workshop:</strong> Introduction to research methods and photography techniques</li>
+                            <li><strong>Photo Documentation:</strong> Capture your healthcare experiences over several weeks</li>
+                            <li><strong>Reflection Sessions:</strong> Individual and group discussions about your photographs</li>
+                            <li><strong>Co-Design Workshops:</strong> Collaborative solution development sessions</li>
+                            <li><strong>Exhibition Preparation:</strong> Curate your work for public presentation</li>
+                            <li><strong>Impact Activities:</strong> Engage with stakeholders and policymakers</li>
+                        </ul>
+                        <p style="margin-top: 1.5rem;"><strong>Time Commitment:</strong> Flexible participation over 2 months with approximately 20-25 hours total involvement.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Protection Section -->
+            <section class="data-protection" id="privacy">
                 <div class="container">
-                    <h2>Invitation Flyer</h2>
-                    <p>Share this study with others who might be interested in participating!</p>
+                    <h2 class="section-title">Privacy & Data Protection</h2>
+                    <div class="card fade-in" style="margin-bottom: 3rem;">
+                        <h2>Your Privacy Matters</h2>
+                        <p>We are committed to protecting your privacy and ensuring the highest standards of data protection throughout this research. All procedures will comply with GDPR regulations and relevant research guidelines.</p>
+                    </div>
+
+                    <div class="privacy-grid">
+                        <div class="privacy-item fade-in">
+                            <div class="privacy-icon">🔒</div>
+                            <div>
+                                <h3>Data Security</h3>
+                                <p>All personal information and photographs are stored securely using encrypted systems with restricted access limited to authorized research team members.</p>
+                            </div>
+                        </div>
+
+                        <div class="privacy-item fade-in">
+                            <div class="privacy-icon">👤</div>
+                            <div>
+                                <h3>Anonymity Options</h3>
+                                <p>You have full control over how your identity is presented. Participate anonymously or choose to be credited for your contributions—the choice is entirely yours.</p>
+                            </div>
+                        </div>
+
+                        <div class="privacy-item fade-in">
+                            <div class="privacy-icon">✋</div>
+                            <div>
+                                <h3>Withdrawal Rights</h3>
+                                <p>You may withdraw from the study at any time without penalty. Upon withdrawal, your data will be removed from the research unless you specifically consent to its continued use.</p>
+                            </div>
+                        </div>
+
+                        <div class="privacy-item fade-in">
+                            <div class="privacy-icon">📋</div>
+                            <div>
+                                <h3>Informed Consent</h3>
+                                <p>Detailed consent forms will be provided before participation begins, clearly outlining how your data will be used, stored, and potentially shared for research purposes.</p>
+                            </div>
+                        </div>
+
+                        <div class="privacy-item fade-in">
+                            <div class="privacy-icon">🎯</div>
+                            <div>
+                                <h3>Purpose Limitation</h3>
+                                <p>Your data will only be used for the stated research purposes. Any additional use will require separate, explicit consent from you.</p>
+                            </div>
+                        </div>
+
+                        <div class="privacy-item fade-in">
+                            <div class="privacy-icon">📞</div>
+                            <div>
+                                <h3>Contact & Support</h3>
+                                <p>Our research team is available to address any privacy concerns or questions you may have throughout your participation in the study.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sign-up Section -->
+            <section class="signup-section" id="signup">
+                <div class="container">
+                    <h2>Register Your Interest</h2>
+                    <p>Interested in participating when the study begins? Complete our interest form to be contacted once ethical approval is obtained and recruitment officially starts.</p>
+                    
+                    <div class="form-container">
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfb2FbcnYibhS3yek2MocHcq7t4aojZyGRUnucXqjVxksQv-A/viewform?embedded=true" width="700" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Flyer Section -->
+            <section class="flyer-section">
+                <div class="container">
+                    <h2>Share Our Mission</h2>
+                    <p>Help us reach more participants by sharing our research study with your networks and communities.</p>
                     
                     <div class="flyer-preview">
-                        <img src="adhd_research_flyer.png" alt="Through ADHD Eyes Research Study Flyer" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">Download and share this flyer to help us reach more participants!</p>
-                        <a href="adhd_research_flyer.png" download="Through_ADHD_Eyes_Study_Flyer.png" style="display: inline-block; margin-top: 1rem; padding: 10px 20px; background: #9c27b0; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Download Flyer</a>
+                        <img src="adhd_research_flyer.png" alt="Through ADHD Eyes Research Study Flyer" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.2 );">
+                        <p style="margin-top: 1.5rem; font-size: 1rem; color: #666;">Download and share this flyer to help us build a diverse research community.</p>
+                        <a href="adhd_research_flyer.png" download="Through_ADHD_Eyes_Study_Flyer.png" class="download-btn">Download Flyer</a>
                     </div>
                     
-                    <a href="#signup" class="cta-button">Learn More & Sign Up</a>
+                    <a href="#signup" class="cta-button" style="margin-top: 2rem;">Register Your Interest</a>
                 </div>
             </section>
         </div>
@@ -467,8 +828,24 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Through ADHD Eyes Research Project. All rights reserved.</p>
-            <p>This study is conducted in accordance with ethical research guidelines and participant privacy protection.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Research Team</h3>
+                    <p>Through ADHD Eyes is conducted by researchers committed to improving healthcare experiences for adults with ADHD in The Netherlands.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Ethics & Compliance</h3>
+                    <p>This research is being developed in accordance with ethical research guidelines and data protection regulations. Formal ethical review will be completed before participant recruitment begins.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p>For questions about participation, privacy, or research procedures, please contact our research team through the participation form.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Through ADHD Eyes Research Project. All rights reserved.</p>
+                <p>Research development in progress. GDPR compliance and participant privacy protection standards will be implemented.</p>
+            </div>
         </div>
     </footer>
 
@@ -487,28 +864,7 @@
             });
         });
 
-        // Form submission handler
-        document.getElementById('participationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Collect form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Simple validation
-            if (!data.name || !data.email || !data.age || !data.location || !data.experience || !data.motivation) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            // Simulate form submission
-            alert('Thank you for your interest! Your application has been submitted. We will contact you within 1-2 weeks with more information about the study.');
-            
-            // Reset form
-            this.reset();
-        });
-
-        // Add fade-in animation on scroll
+        // Intersection Observer for fade-in animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -526,6 +882,55 @@
             el.style.animationPlayState = 'paused';
             observer.observe(el);
         });
+
+        // Handle iframe responsiveness
+        function adjustIframeHeight() {
+            const iframe = document.querySelector('.form-container iframe');
+            if (iframe && window.innerWidth <= 768) {
+                iframe.style.height = '700px';
+            } else if (iframe) {
+                iframe.style.height = '600px';
+            }
+        }
+
+        window.addEventListener('resize', adjustIframeHeight);
+        window.addEventListener('load', adjustIframeHeight);
+
+        // Add loading state for iframe
+        const iframe = document.querySelector('.form-container iframe');
+        if (iframe) {
+            iframe.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+        }
+
+        // Accessibility: Skip to main content
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab' && e.target.tagName === 'BODY') {
+                const mainContent = document.querySelector('.main-content');
+                if (mainContent) {
+                    mainContent.focus();
+                }
+            }
+        });
+
+        // Performance: Lazy load images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
     </script>
 </body>
 </html>
