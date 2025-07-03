@@ -114,17 +114,31 @@
             width: 100%;
         }
 
-        /* Hero Section - Simple Background Image Only */
+        /* Hero Section - Brain Behind Title Design */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
             position: relative;
             overflow: hidden;
-            background: url('https://github.com/TahSal/ADHD-STUDY/blob/main/adhd_background_study.png?raw=true' ) center/cover no-repeat;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+            padding: 120px 0 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 600px;
+            background: url('brain_exact_design.png') center/contain no-repeat;
+            opacity: 0.25;
+            z-index: 1;
+            pointer-events: none;
         }
 
         .hero-content {
@@ -135,18 +149,25 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 4.5rem;
             margin-bottom: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -1px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            color: var(--text-dark);
+            line-height: 1.1;
+            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+            position: relative;
+            z-index: 4;
         }
 
         .hero .subtitle {
             font-size: 1.4rem;
             margin-bottom: 2.5rem;
-            opacity: 0.95;
-            font-weight: 300;
+            color: var(--text-light);
+            font-weight: 400;
             line-height: 1.6;
+            position: relative;
+            z-index: 4;
         }
 
         .cta-button {
@@ -554,6 +575,50 @@
         .download-btn:focus {
             outline: 2px solid var(--accent-cream);
             outline-offset: 2px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 20px 60px;
+            }
+
+            .hero::before {
+                width: 600px;
+                height: 450px;
+                opacity: 0.1;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                padding: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+                letter-spacing: -1px;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .two-column-grid,
+            .section-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .methodology-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Print styles */
