@@ -114,7 +114,7 @@
             width: 100%;
         }
 
-        /* Hero Section with Background Image */
+        /* Hero Section with Perfect Background Image Positioning */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -126,9 +126,10 @@
             overflow: hidden;
             background: var(--gradient-hero);
             background-image: url('https://github.com/TahSal/ADHD-STUDY/blob/main/Untitled%20design%20(2 ).png?raw=true');
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: overlay;
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         .hero::before {
@@ -139,7 +140,7 @@
             right: 0;
             bottom: 0;
             background: var(--gradient-hero);
-            opacity: 0.75;
+            opacity: 0.7;
             z-index: 1;
         }
 
@@ -148,13 +149,17 @@
             z-index: 3;
             max-width: 800px;
             padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .hero h1 {
             font-size: 4rem;
             margin-bottom: 1.5rem;
             font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             letter-spacing: -1px;
         }
 
@@ -164,6 +169,7 @@
             opacity: 0.95;
             font-weight: 300;
             line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .cta-button {
@@ -379,7 +385,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1  )"/><circle cx="80" cy="40" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1 )"/><circle cx="80" cy="40" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
             animation: float 30s infinite linear;
         }
 
@@ -436,7 +442,7 @@
             flex-shrink: 0;
         }
 
-        /* Flyer Section */
+        /* Flyer Section - Updated for GitHub */
         .flyer-section {
             background: var(--white);
             padding: 5rem 0;
@@ -459,6 +465,18 @@
         .flyer-preview:hover {
             transform: scale(1.02);
             box-shadow: 0 10px 30px var(--shadow-medium);
+        }
+
+        .flyer-preview img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .flyer-preview img:hover {
+            transform: scale(1.05);
         }
 
         .download-btn {
@@ -506,12 +524,22 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .hero {
+                background-size: cover;
+                background-attachment: scroll;
+            }
+            
             .hero h1 {
                 font-size: 2.8rem;
             }
 
             .hero .subtitle {
                 font-size: 1.2rem;
+            }
+
+            .hero-content {
+                margin: 1rem;
+                padding: 1.5rem;
             }
 
             .nav-links {
@@ -616,7 +644,7 @@
                 <div class="two-column-grid">
                     <div class="card blue fade-in">
                         <h2>Our Mission</h2>
-                        <p>We are pioneering an innovative approach to understanding and improving ADHD healthcare experiences in The Netherlands. By combining the power of visual storytelling through Photovoice with Human-Centered Design principles, we aim to amplify the voices of adults with ADHD and create meaningful change in healthcare delivery.</p>
+                        <p>"Through ADHD Eyes" is a participatory research study that explores the healthcare experiences of adults with ADHD. The project examines both ADHD-related healthcare services and their interactions with general healthcare systems with equal emphasis. By combining lived experience with collaborative design approaches, this research aims to document, analyze, and improve how healthcare systems serve individuals with ADHD.</p>
                         <p>This research addresses the critical gap between healthcare providers' understanding and the lived experiences of adults with ADHD, fostering empathy and driving systemic improvements.</p>
                     </div>
                     <div class="card sage fade-in">
@@ -780,16 +808,19 @@
                 </div>
             </section>
 
-            <!-- Flyer Section -->
+            <!-- Flyer Section - Updated with New Image -->
             <section class="flyer-section">
                 <div class="container">
                     <h2>Share Our Mission</h2>
                     <p>Help us reach more participants by sharing our research study with your networks and communities.</p>
                     
                     <div class="flyer-preview">
-                        <img src="new_flyer.png" alt="Through ADHD Eyes Research Project Flyer" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.2  );">
+                        <img src="https://github.com/TahSal/ADHD-STUDY/blob/main/THROUGH%20ADHD%20EYES%20Research%20Project%20to%20exploring%20and%20Improving%20ADHD%20Adults%20Healthcare%20Experiences%20in%20The%20Netherlands%20Using%20Photovoice%20and%20Human-Centered%20(1 ).png?raw=true" 
+                             alt="Through ADHD Eyes Research Project Flyer">
                         <p style="margin-top: 1.5rem; font-size: 1rem; color: #666;">Download and share this flyer to help us build a diverse research community.</p>
-                        <a href="new_flyer.png" download="Through_ADHD_Eyes_Research_Flyer.png" class="download-btn">Download Flyer</a>
+                        <a href="https://github.com/TahSal/ADHD-STUDY/blob/main/THROUGH%20ADHD%20EYES%20Research%20Project%20to%20exploring%20and%20Improving%20ADHD%20Adults%20Healthcare%20Experiences%20in%20The%20Netherlands%20Using%20Photovoice%20and%20Human-Centered%20(1 ).png?raw=true" 
+                           download="Through_ADHD_Eyes_Research_Flyer.png" 
+                           class="download-btn">Download Flyer</a>
                     </div>
                     
                     <a href="#signup" class="cta-button" style="margin-top: 2rem;">Participate in Research</a>
