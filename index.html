@@ -114,7 +114,7 @@
             width: 100%;
         }
 
-        /* Hero Section - Optimized Background Image Positioning */
+        /* Hero Section - Simple Background Image Only */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -124,24 +124,7 @@
             color: white;
             position: relative;
             overflow: hidden;
-            background: 
-                linear-gradient(135deg, rgba(107, 125, 179, 0.8) 0%, rgba(139, 157, 195, 0.7) 50%, rgba(155, 181, 168, 0.6) 100%),
-                url('https://github.com/TahSal/ADHD-STUDY/blob/main/adhd_background.png?raw=true' );
-            background-size: contain;
-            background-position: right center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, rgba(107, 125, 179, 0.4) 0%, rgba(107, 125, 179, 0.2) 50%, transparent 100%);
-            z-index: 1;
+            background: url('https://github.com/TahSal/ADHD-STUDY/blob/main/adhd_background_study.png?raw=true' ) center/cover no-repeat;
         }
 
         .hero-content {
@@ -149,7 +132,6 @@
             z-index: 3;
             max-width: 800px;
             padding: 2rem;
-            margin-left: -200px; /* Shift text to the left for better positioning with right-aligned image */
         }
 
         .hero h1 {
@@ -157,7 +139,6 @@
             margin-bottom: 1.5rem;
             font-weight: 800;
             letter-spacing: -1px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero .subtitle {
@@ -166,7 +147,6 @@
             opacity: 0.95;
             font-weight: 300;
             line-height: 1.6;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .cta-button {
@@ -501,12 +481,7 @@
         @media (max-width: 768px) {
             .hero {
                 background-size: cover;
-                background-position: center;
                 background-attachment: scroll;
-            }
-            
-            .hero-content {
-                margin-left: 0; /* Reset margin on mobile */
             }
             
             .hero h1 {
